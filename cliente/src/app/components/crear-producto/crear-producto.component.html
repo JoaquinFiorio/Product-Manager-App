@@ -1,0 +1,43 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-lg-6 offset-lg-3">
+      <div class="card">
+        <div class="card-body text-center">
+          <span class="titulo">
+           {{titulo | uppercase}}
+          </span>
+          <form class="mt-3" (ngSubmit)="agregarProducto()" [formGroup]="productoForm">
+            <div class="mb-3">
+              <input formControlName="producto" type="text" placeholder="Producto" class="form-control form-control-lg">
+              <div *ngIf="productoForm.get('producto')?.hasError('required') && productoForm.get('producto')?.touched" class="text-danger">
+                <span>El nombre del producto es obligatorio</span>
+              </div>
+            </div>
+            <div class="mb-3">
+              <input formControlName="categoria" type="text" placeholder="Categoria" class="form-control form-control-lg">
+              <div *ngIf="productoForm.get('categoria')?.hasError('required') && productoForm.get('categoria')?.touched" class="text-danger">
+                <span>La categoria es obligatoria</span>
+              </div>
+            </div>
+            <div class="mb-3">
+              <input formControlName="ubicacion" type="text" placeholder="Ubicacion" class="form-control form-control-lg">
+              <div *ngIf="productoForm.get('ubicacion')?.hasError('required') && productoForm.get('ubicacion')?.touched" class="text-danger">
+                <span>la ubicacion es obligatoria</span>
+              </div>
+            </div>
+            <div class="mb-3">
+              <input formControlName="precio" type="number" placeholder="Precio" class="form-control form-control-lg">
+              <div *ngIf="productoForm.get('precio')?.hasError('required') && productoForm.get('precio')?.touched" class="text-danger">
+                <span>El precio es obligatorio</span>
+              </div>
+            </div>
+            <div class="mb-3">
+              <button routerLink="" class="btn btn-secondary btn-lg float-start">VOLVER</button>
+              <button [disabled]="productoForm.invalid" type="submit" class="btn btn-success btn-lg float-end">ACEPTR</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

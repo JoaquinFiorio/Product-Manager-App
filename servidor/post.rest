@@ -1,0 +1,27 @@
+###
+POST http://localhost:4000/api/productos
+Content-Type: application/json
+
+{
+    "nombre": "sprite",
+    "categoria": "bebida",
+    "ubicacion": "arg",
+    "precio": 3
+}
+
+###
+GET http://localhost:4000/api/productos
+
+###
+PUT http://localhost:4000/api/productos/63a2477fffa7a1f6aff0cee9
+Content-Type: application/json
+
+{
+    "precio": 7
+}
+
+###
+GET http://localhost:4000/api/productos/63a2477fffa7a1f6aff0cee9
+
+###
+DELETE http://localhost:4000/api/productos/63a2477fffa7a1f6aff0cee9
